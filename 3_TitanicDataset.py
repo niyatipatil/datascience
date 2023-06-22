@@ -59,18 +59,14 @@ print(X['Embarked'])
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, random_state=1, test_size=0.2)
 
 #-----RandomForestClassifier-----
-
 rf = RandomForestClassifier(random_state=1)
 rf.fit(X_train, Y_train)    #Train the model using the training data
-
 y_pred = rf.predict(X_test)  #Predict on the testing data
-
 accuracy = accuracy_score(Y_test, y_pred)   #Calculate the accuracy of the model
 print("Accuracy using Random Forest Classifier:", accuracy)
 
 
 #-----LogisticRegression-----
-
 lr = LogisticRegression(random_state=1)
 lr.fit(X_train,Y_train)
 
@@ -79,7 +75,6 @@ print('Accuracy using Logistics Regression:',accuracy_score(Y_test,y_pred))
 
 
 #-----DecisionTreeClassifier-----
-
 dt = DecisionTreeClassifier(random_state=1)
 dt.fit(X_train, Y_train)
 y_pred = dt.predict(X_test)
@@ -87,17 +82,13 @@ print('Accuracy using Decision Tree Classifier:',accuracy_score(Y_test,y_pred))
 
 
 #-----GradientBoostingClassifier-----
-
 gbm = GradientBoostingClassifier(n_estimators=10)
 gbm.fit(X_train, Y_train)
 y_pred = gbm.predict(X_test)
 print('Accuracy using Gradient Boosting Classifier:',accuracy_score(Y_test,y_pred))
 
 #-----MultinomialNB-----
-
 nb = MultinomialNB()
 nb.fit(X_train, Y_train)
 y_pred = nb.predict(X_test)
 print('Accuracy using MultinomialNB:',accuracy_score(Y_test,y_pred))
-
-
