@@ -1,4 +1,4 @@
-# Linear Regression on Walmart Sales to predict values
+# Linear Regression on Walmart Sales to predict Weekly Sales values
 # By Niyati P.
 
 import pandas as pd
@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 
-train = pd.read_csv("D:/dataset/walmart//train.csv")       #Columns are Store, Dept, Date, Weekly_Sales, IsHoliday
+train = pd.read_csv("D:/dataset/walmart/train.csv")       #Columns are Store, Dept, Date, Weekly_Sales, IsHoliday
                                                                                 #used for training a predictive model
 stores = pd.read_csv("D:/dataset/walmart/stores.csv")      #Columns are Store, Dept, Date, IsHoliday
 features = pd.read_csv("D:/dataset/walmart/features.csv")  #Columns are Store, Date, Temperature, Fuel_Price, MarkDown1,2,3,4,5, CPI, Unemployment, IsHoliday
@@ -137,6 +137,7 @@ print('R2 Score of LR= ', r2)
 print("\nPredicted Weekly Sales:")
 print(y_pred)
 
+#You can also try various other Regression Algorithms
 '''
 # DecisionTreeRegressor
 from sklearn.tree import DecisionTreeRegressor
@@ -148,6 +149,8 @@ mse_dt = mean_squared_error(Y_val, y_pred_dt)
 r2_dt = r2_score(Y_val ,y_pred_dt)
 print('MSE of DT = ', mse_dt)
 print('R2 Score of DT = ', r2_dt)
+print("\nPredicted Weekly Sales:")
+print(y_pred_dt)
 '''
 
 '''
@@ -160,4 +163,7 @@ y_pred_rf = rf_model.predict(x_val)
 mse_rf = mean_squared_error(y_pred_rf, Y_val)
 r2_rf = r2_score(y_pred_rf, Y_val)
 print('MSE of RF = ', mse_rf)
-print('R2 Score of RF = ', r2_rf)'''
+print('R2 Score of RF = ', r2_rf)
+print("\nPredicted Weekly Sales:")
+print(y_pred_rf)
+'''
