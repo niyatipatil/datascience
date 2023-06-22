@@ -7,7 +7,6 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import GradientBoostingClassifier
-#from sklearn.naive_bayes import MultinomialNB
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from matplotlib import pyplot as plt
@@ -61,16 +60,13 @@ accuracy = accuracy_score(Y_test, y_pred)   #Calculate the accuracy of the model
 print("Accuracy using Random Forest Classifier:", accuracy)
 
 #-----LogisticRegression-----
-
 lr = LogisticRegression(random_state=1)
 lr.fit(X_train,Y_train)
-
 y_pred=lr.predict((X_test))
 print('Accuracy using Logistics Regression:',accuracy_score(Y_test,y_pred))
 
 
 #-----DecisionTreeClassifier-----
-
 dt = DecisionTreeClassifier(random_state=1)
 dt.fit(X_train, Y_train)
 y_pred = dt.predict(X_test)
@@ -78,15 +74,13 @@ print('Accuracy using Decision Tree Classifier:',accuracy_score(Y_test,y_pred))
 
 
 #-----GradientBoostingClassifier-----
-
 gbm = GradientBoostingClassifier(n_estimators=10)
 gbm.fit(X_train, Y_train)
 y_pred = gbm.predict(X_test)
 print('Accuracy using Gradient Boosting Classifier:',accuracy_score(Y_test,y_pred))
 
 
-
-
+#-------------------------------------------------------------------------------------------------------------
 # You can also explore the process of feature selection to identify the most relevant features for your models
 # feature selection code here
 '''
