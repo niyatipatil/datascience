@@ -4,7 +4,7 @@
 
 import pandas as pd     #pd is an alias
 
-df = pd.read_csv("D:/driveB/internship_23/Iris.csv")
+df = pd.read_csv("D:/dataset/Iris.csv")
 
 '''
 print("\n------------ Handling Missing Values ------------------\n")
